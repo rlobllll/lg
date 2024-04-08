@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+@import url('reset.css');
+@import url('font.css');
+
+body {font-family: 'Pretendard-Regular';}
+
+header {width: 100%; height: 70px; position: absolute; top: 0; left: 0;z-index: 2;}
+header h1 {width: 100px; height: 30px; float: left; margin: 15px;}
+header h1 img {width: 100%;}
+header .hambuger {float: right;width: 40px; height: 40px; margin: 15px; position: relative; z-index: 7;}
+header .hambuger:before,
+header .hambuger:after {content: "";position: absolute; width: 24px; height: 2px; background: #fff; left: 8px; top: 50%; transition: 0.5s;}
+header .hambuger:before {margin-top: -5px;}
+header .hambuger:after {margin-top: 5px;}
+header .hambuger.on:before {margin-top: 0; transform: rotate(45deg);}
+header .hambuger.on:after {margin-top: 0; transform: rotate(135deg);}
+
+
+/* menu */
+.modal {width: 100%; height: 100vh; position: fixed; background: rgba(0, 13, 39, 0.9); top: 0; left: 0; display: none;}
+
+nav {width: 250px; height: 100vh; background: #c6004d; position: absolute; right: -290px; padding: 0 20px; transition: 0.5s;}
+nav.on {right: 0;}
+nav .gnb {margin-top: 100px; overflow: auto; height: calc(100% - 100px);}
+nav .gnb li {line-height: 60px; text-align: center; font-size: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
+nav .gnb li a {color: #fff; display: block;}
+/* 시험용도 */
+/* nav .gnb li .lnb {background: #000; max-height: 0; overflow: hidden; transition: 0.3s;}
+nav .gnb li:hover .lnb {max-height: 360px;}  */
+nav .gnb li .lnb {background: #021a49; display: none;}
+nav .gnb li .lnb li {border-bottom:0; font-size: 18px;}
+
+
+#visual {width: 100%;height: 100vh; overflow: hidden; position: relative;}
+#visual video {position: absolute; left: 50%; transform: translate(-50%); height: 100%; min-height: 100vw;}
+        /* ㄴmin-height: 100vw; 보여지는 최소의 너비가 100vw 빈 부분없이 나오게끔하기 안주면 가로로 돌려서 봤을 때 빈부분이 생김 / vw-화면의너비/vh-화면의높이 */
+
+#visual:before {content: ""; position: absolute; width: 100%; height: 100%; background: linear-gradient(-45deg, #610000, #002262); z-index: 1; opacity: 0.3;}
+
+#visual .textbox {position: absolute; color: #fff; z-index: 1; padding: 30px; top: 50%; transform: translateY(-50%); word-break: keep-all; }
+#visual .textbox strong {font-size: 26px; line-height: 1.2;}
+#visual .textbox strong span {font-size: 55px;}
+#visual .textbox p {font-size: 16px; line-height: 1.4; margin-top: 20px; font-family: 'Pretendard-Regular';}
+        /* margin은 block태그만 적용됨 - p태그는 block태그임 / padding은 다 적용 가능  */
+
+
+/* section1 */
+#section1 .centerbox {padding: 60px 20px;}
+#section1 h2 {text-align: center; font-size: 34px; font-weight: 300; word-break: keep-all;}
+#section1 h2 span {display: block; font-size: 20px; color: #555; margin-top: 25px;}
+
+#section1 .cont {margin-top: 20px;}
+#section1 .cont:after {content: ""; display: block; clear: both;}
+/*  밑에 주석처리: %로 할경우 -가로로 보았을 때 너비가 늘어나지 않게 하려고 %로 너비를 적음  */
+/* #section1 .cont li {width: 32%; margin-right: 2%; height: 100px; background: #000; float: left;} */
+        /* 공식: 알고싶은 크기 / 부모크기 *100 */
+        /* 비례식: 280 : 100% = 90:X 
+            900 = 280x (쌤이 알려주신 공식,,,,인데 9000 = 280x 이고 x는 32.14인듯
+            900/280 = x 
+            3.214 -> 32% */
+/* #section1 .cont li:last-child {margin-right: 0;} */
+
+#section1 .cont li {Width: calc((100% - 10px) / 3); margin-right: 5px; padding-bottom: 35.714% ; background: #ffe2e2; float: left; position: relative; }
+#section1 .cont li:last-child {margin-right: 0;}
+#section1 .cont li .content {position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
+#section1 .cont li:nth-child(1) {background: url(../images/news1.png); background-size: cover;}
+#section1 .cont li:nth-child(2) {background: url(../images/news2.png);background-size: cover}
+#section1 .cont li:nth-child(3) {background: url(../images/news3.png);background-size: cover}
+#section1 .cont li:before {content:""; position: absolute; width: 100%;height: 100%; background: #000; opacity: 0.4; left: 0; top: 0;}
+
+#section1 .cont .content em {font-style: normal; font-size: 20px; font-weight: bold; color: #fff;}
+#section1 .cont .content p {display: none;}
+#section1 .cont .content a {position: absolute; width: 50px; height: 50px; background: #fff; bottom: -25px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); font-size: 0;color: transparent; text-indent: -9999px; border-radius: 50px;}
+        /* '바로가기' 글자 안보이게끔 하려고 font-size: 0;color: transparent; text-indent: -9999px; 사용 -> 폰트 크기를 0만 주게 되면 지원하지 않는 컴퓨터도 있어서 */
+#section1 .cont .content a:before,
+#section1 .cont .content a:after {content: ""; position: absolute; width: 20px; height: 2px;background: #000; top: 49%; left: 15px; transform-origin: right; }
+#section1 .cont .content a:before {transform: rotate(35deg);}
+#section1 .cont .content a:after {transform: rotate(-35deg);}
+
+
+/* section2 */
+#section2 {background: url(../images/logo_main.png); background-size: cover; position: relative;}
+#section2:before {content: ""; position: absolute; width: 100%; height: 100%;  background: #000000; opacity: 0.4; top: 0; left: 0; z-index:1;}
+#section2 .centerbox {padding: 70px 20px; z-index: 3; position: relative;}
+                                        /* ㄴ섹션에도 position: relative를 주고 여기서도 position: relative를 줘야 z-index의 #section2:before에 준 투명한 배경이 먹음 */
+#section2 figure {width: 120px; margin: 0 auto 50px auto;}
+#section2 figure img {width: 100%;}
+#section2 .text p {color: #fff; margin-bottom: 20px; word-break: keep-all; text-align: justify;}
+        /* ㄴtext-align: justify -> 문장이 많고 길어서 양쪽 끝에 여백을 남기지않고 꽉 채우면서 붙이기 */
+#section2 .text p span {color: #c6004d;}
+
+
+
+/* section3 */
+#section3 .centerbox {padding: 60px 20px;}
+#section3 h2 {text-align: center; font-size: 34px; font-weight: 300; word-break: keep-all;margin-bottom: 20px;}
+#section3 h2 span {display: block; font-size: 20px; color: #555; margin-top: 25px;}
+#section3 .cont li {width: calc((100% - 5px) / 2) ; margin-right: 5px;margin-top: 45px; float: left; position: relative;}
+#section3 .cont:after {content: ""; display: block; clear: both;}
+                /* ㄴ자식한테 float을 주게되면 부모의 높이가 사라져서 다른 섹션들이 겹쳐질 수 있음 (ex.footer가 겹쳐짐 그래서 저거는 공식처럼 외우고 부모한테 사용해주면 높이를 유지해주는 것처럼 만들 수 있음 */
+#section3 .cont li:nth-child(1),
+#section3 .cont li:nth-child(2) {margin-top: 0;}
+#section3 .cont li:nth-child(2n) {margin-right: 0;}
+#section3 .cont li:last-child {margin-right: 0;}
+#section3 .cont li img {width: 100%; height: 100%;}
+#section3 .cont li:before {content:""; position: absolute; width: 100%;height: 100%; background: #000; opacity: 0.4; left: 0; top: 0;}
+#section3 .cont li .content {position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 100% ; top: 5%;}
+#section3 .cont .content em {font-style: normal; font-size: 20px; font-weight: bold; color: #fff; z-index: 4;}
+#section3 .cont .content a {font-size: 0; color: transparent; text-indent: -9999px; height: 50px; width: 50px; background: #ffffff; position: absolute; border-radius: 50px;bottom: -20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+#section3 .cont .content a:before,
+#section3 .cont .content a:after {content: ""; position: absolute; width: 20px; height: 2px; background: #000; top: 50%; left: 15px; transform-origin: right;  }
+#section3 .cont .content a:before {transform: rotate(35deg);}
+#section3 .cont .content a:after {transform: rotate(-35deg);}
+
+
+
+
+/* footer */
+footer {width: 100%; height: 130px;background: #c6004d;display: flex; justify-content: center; align-items: center; }
+                /* ㄴ display: flex (가로정렬,,?) 를 써야지 -> justify-content: center 가로에서의 가운데 / align-items: center 세로에서의 가운데 의 효과가 먹음 */
+footer p {text-align: center; color: #fff; font-size: 14px;}
+
+
+
+
+/* 반응형 */ 
+@media screen and (min-width:1280px){
+    #visual .textbox strong {font-size: 60px;}
+}
+
+

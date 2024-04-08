@@ -1,0 +1,394 @@
+@charset "UTF-8";
+
+body {overflow-x: hidden;}
+
+@media screen and (min-width:1280px) {
+        
+
+
+.centerbox {width: 1550px; margin: 0 auto;}
+
+video {position: absolute; width: 100%;}
+        /* ㄴ 자바스크립트에 적용한 화면 못줄이게 하는거 지워도 됨 */
+
+/* 유튜브에서 영상바로 가져오기 */
+/* #visual iframe {width: 100%; height: 1070px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);} */
+
+header {width: 100%; max-width:1550px; height:70px;position: absolute; top: 50px; left: 50%; transform: translateX(-50%); z-index: 7;}
+
+header h1 {width: 270px; height: 70px;  float: left;}
+header nav {width: 800px; height: 70px; float: left; margin-left: 150px;}
+
+header nav:before {content: ""; position: absolute; width: 100%; height: 0; background: #c6004d; top: 70px; transition: 0.3s;}
+
+header nav.on:before {height: 330px;}
+
+header nav > .gnb > li {float: left;height: 70px; line-height: 70px; position: relative;}
+header nav > .gnb > li > a {font-size: 20px; float: right; display: block; padding: 0 50px; color: #fff;}
+
+header nav li .lnb {position: absolute;  width: 260px;padding: 16px 0; top: 70px; left: 50px; transition: 0.3s; opacity: 0;visibility: hidden;}
+header nav li:hover .lnb {left: 0; opacity: 1; visibility: visible; background: #c6004d;}
+header nav.on li .lnb {left: 0; opacity: 1; visibility: visible; background: none;}
+
+             /* 안보이게하기
+            opacity:0  <  visibility:hidden  < display:none
+            opacity:0          우리 눈에만 안보임
+            visibility:hidden  마우스로도 못건드리지만 공간은 남아있음 ( 잘안씀 )
+            display:none       공간도 사라짐 */
+
+header nav li .lnb li { height: 45px; line-height: 45px; font-weight: 400; position: relative;}
+header nav li .lnb li a {font-size: 16px;display: block; padding: 0 45px; color: #fff;}
+header nav li .lnb li:before {content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; position: absolute; left: 26px; top: 20px; display: none;}
+
+header nav li .lnb li:hover:before {display: block;}
+
+
+header .hambuger {width: 70px; height: 70px; float: right; position: relative; cursor: pointer;}
+header .hambuger:before,
+header .hambuger:after {content: ""; position: absolute; width: 50px; height: 5px; background: #fff; left: 10px; top: 50%; transition: 0.3s;}
+header .hambuger:before {margin-top: -10px;}
+header .hambuger:after {margin-top: 5px;}
+
+header .hambuger.on:before {margin-top: -2px; transform: rotate(45deg);}
+header .hambuger.on:after {margin-top: -2px; transform: rotate(-45deg);}
+
+
+/* 사이드클릭바 */
+.prod_intro {writing-mode: vertical-rl; width: 65px;height: 200px; background: #c6004d; position: fixed; z-index: 5; right: 0; top: 110px; border-radius: 5px 0 0 5px; color: #fff; text-align: center; display: flex; align-items: center; justify-content: center; gap:10px ; font-weight: bold; transition: 0.1s;}
+        /* ㄴ position:fixed 는 화면을 스크롤해도 고정할 수 있는 태그 */
+        /* ㄴ writing-mode: vertical-rl 옆으로 돌리는거 */
+.prod_intro:hover {background: rgb(255, 255, 255); color: #000;}
+.prod_intro p {}
+.prod_intro img {width: 21px;}
+
+
+
+#visual {width: 100%; height: 100vh; background: #ffc400; overflow: hidden;}
+#visual video {width: 100%;}
+#visual:before {content: ""; position: absolute; width: 100%; height: 100%; background: linear-gradient(-45deg, #420000, #002262); opacity: 0.3; z-index: 3;}
+
+#visual video {pointer-events: none;}
+        /*  ㄴ 비디오 메인화면 클릭시 영상이 멈췄다가 재생이 되는걸 막는 코드 - 클릭해도 변화 없음 */
+
+#visual .textbox {width: 1200px; height: 360px; position: absolute; left: 59%; top: 50%; transform: translate(-75%, -50%); z-index: 5; word-break: keep-all;}
+        /* ㄴ word-break:keep-all 글자 단위로 띄어쓰기 자동으로 됨 */
+#visual .textbox strong {font-weight: 72px; font-family: 'Pretendard-Bold'; font-weight: 900; font-size: 70px; color: #fff;}
+#visual .textbox strong span {font-size: 150px;}
+#visual .textbox p {font-size: 26px; font-family:'Pretendard-Medium'; color: #fff; line-height: 40px; margin-top: 30px;}
+
+
+/* section_box */
+#section_box > section {padding: 100px 0 170px 0; box-sizing: border-box;}
+#section_box > section h2 {font-size: 60px; color: #000; text-align: center; font-weight: lighter; line-height: 90px; margin-top: 100px;}
+#section_box > section h2 span {font-size: 26px; color: #333; display: block;font-family: 'Pretendard-Light'}
+
+#section1 .cont { display: flex; justify-content: space-between; gap: 25px;}
+                /* ㄴ display:flex 는 왼쪽 가로정렬, justify-content: center는 가운데정렬,justify-content: space-between은 양쪽 끝에 작은 자동 여백을 주면서 붙음 ->위에서준 센터박스의 전체 너비가 있기때문 , gap:25px은 여백 주기 , flex-direction:column은 세로 정렬  */
+                /* align-items:center 가로에서 가운데, 
+                justify-content: center는 세로에서 가운데정렬 */
+                /* flex-grow는 밑에 .cont li에 줄 수 있는데 위에서 준 gap으로 인해 만들어놓은 박스가 튀어나갔거나 여백이 남을 경우 그 남는 여백을 flex-grow:1 쓰겠다로 표현, 안쓸경우 0으로 표현, 꼭 0과 1로 표현하지않고 숫자 비율로 나타낼 수 있음 */
+
+#section1 .cont li {width: 500px; height: 550px; flex-grow: 0; flex-shrink: 1;position: relative; }
+                /* ㄴ display inline block을 쓰면 가로 가운데 정렬이 되는데 폰트랑 관련이 있어서 4px씩 여백이 생겨서 #section1 .cont에 폰트사이즈를 0으로 줘야함 그러면 글씨를 넣었을 때 크기가 없어졌기때문에 li에 다시 글씨크기를 부여해줘야함  */
+                /* display:flex, justify-content:center , align-items:center를 써주면 저 박스안에 들어가는 글자들도 가운데로 정렬이됨 */
+
+#section1 .cont li:before {content:""; position: absolute; width: 100%;height: 100%; background: #000; opacity: 0.4; left: 0; top: 0;}
+#section1 .cont li .content {position: absolute; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(198, 0, 77, 0), rgba(198, 0, 77, 0)); display: flex; flex-direction:column; align-items: center; justify-content: center;}
+
+#section1 .cont li:hover .content {background:linear-gradient(135deg, rgba(198, 0, 77, 0.2), rgba(198, 0, 77, 0.9))}
+
+#section1 .cont li .content em {font-size: 48px; color: #fff; font-style: normal; font-weight: bold; height: 74px; display: block;}
+#section1 .cont li .content p {color: #fff; font-size: 24px; width: 350px; word-break: keep-all; margin-bottom: 0; text-align: center; transition: 0.3s;}
+#section1 .cont li .content a {color: #c6004d; padding: 10px 30px; background: #fff; font-size:20px ; display: inline-block; opacity: 0; transition: 0.2s;}
+
+#section1 .cont li:hover a{opacity: 1;}
+#section1 .cont li:hover p{margin-bottom: 36px}
+
+#section1 .cont li:nth-child(1) {background: url(../images/news1.png);}
+#section1 .cont li:nth-child(2) {background: url(../images/news2.png);}
+#section1 .cont li:nth-child(3) {background: url(../images/news3.png);}
+
+
+
+
+#section2 {height: 800px; background: url(../images/logo_main.png) center top; background-attachment: fixed; position: relative;}
+                /* background-attachment: fixed 이미지를 고정시켜서 움직이는 스크롤에 따라감 */
+#section2:before {content: ""; position: absolute; width: 100%; height: 800px;  background: #000000; opacity: 0.8; top: 0; left: 0; z-index: 1;}
+                /* ㄴ z-index: 1;안주면 밑에 텍스트가 이 배경 다 뒤로가짐.. */
+#section2 .centerbox {display: flex; justify-content: center; align-items: center; height: 100%; gap: 200px;}
+#section2 figure {width: 355px; height: 490px; z-index: 3;}
+#section2 .text {width: 700px;height: 490px; font-size: 22px; line-height: 38px; color: #fff; word-break: keep-all; z-index: 3; margin-top: 150px;}
+        /* ㄴ word-break 단어가 글끝에서 끊기지않게 자동으로 줄바꿈해주는 태그 */
+#section2 .text p {margin-bottom: 30px;}
+#section2 .text p span {color: #c6004d; font-weight: 600;}
+
+
+
+
+#section3 .cont {display: flex;gap: 25px; flex-wrap: wrap;}
+#section3 li {width: 500px; height: 350px; background: #ffd0d0; position: relative; left: 20px;}
+#section3 li .content {position: absolute; width: 100%; height: 100%; top: 0;left: 0; background: rgba(0,0, 0, 0.3); color: #fff; display: flex; justify-content: center; align-items: center; flex-direction:column; }
+#section3 li .content em {font-size: 30px; font-style: normal; }
+#section3 li img {transition: 0.3s;}
+
+#section3 li:hover img {transform: scale(1.2);}
+                /* ㄴ 마우스 커서 올라갔을 경우 이미지 사이즈 1.2배 적용됨 */
+#section3 li {overflow: hidden;}
+
+#section3 li .content a {color: #fff;}
+
+#section3 .cont li:hover .content {background:linear-gradient(135deg, rgba(198, 0, 77, 0.2), rgba(198, 0, 77, 0.9))}
+#section3 .cont li .content a {color: #c6004d; padding: 10px 30px; background: #fff; font-size:20px ; display: inline-block; opacity: 0; transition: 0.2s; margin-top: 10px;}
+#section3 .cont li:hover a{opacity: 1;}
+
+
+
+/* footer */
+footer .footer_menu {height: 430px; background: #000; padding: 80px 0; box-sizing: border-box;}
+footer .footer_menu .centerbox {display: flex;gap: 25px;}
+footer .footer_menu .centerbox > div { width: 300px; height: 200px; flex-grow: 1;}
+.footer_menu h2 {height: 55px; border-bottom:  2px solid #fff; font-size: 30px; color: #fff; margin-bottom: 38px;}
+.footer_menu h2 em {color:  #c6004d; font-style: normal;}
+.footer_menu h2 span {border: 1px solid #000; position: relative;}
+
+/* footer안에있는 점만들기 */
+.footer_menu h2 span:before {content: ""; position: absolute; width: 7px; height: 7px; border-radius: 50%; background:#c6004d; right: -10px; top: 4px;}
+
+.footer_menu .info {line-height: 38px; font-size: 20px; color: #fff; font-size: 18px;}
+.footer_menu .info p span {color: #c6004d;}
+.footer_menu .info a {color: #fff; }
+
+.quicklink .info {display: flex; flex-wrap: wrap;}
+        /* ㄴflex-wrap: wrap 줄바꿈 한다는 뜻 */
+.quicklink .info a {color: #fff; width: 50%;}
+.quicklink .info a a:nth-last-child(5) {width: 100%;}
+
+footer .copyright {height: 220px; background:  #c6004d; display: flex; justify-content: center; align-items: center; width: 100%;}
+
+
+
+
+
+
+/* 서브페이지1 */
+#visual_sub {height: 550px; background: url(../images/sub_main.png) center;}
+#visual_sub:before {content: ""; position: absolute; width: 100%; height: 550px; background: linear-gradient(-45deg, #420000, #002262); opacity: 0.3;}
+
+#visual_sub .textbox {width: 970px; height: 360px; position: absolute; left: 59%; top: 40%; transform: translate(-25%, -60%); z-index: 5; word-break: keep-all;}
+        /* ㄴ word-break:keep-all 글자 단위로 띄어쓰기 자동으로 됨 */
+#visual_sub .textbox strong {font-weight: 72px; font-family: 'Pretendard-Bold'; font-weight: 900; font-size:60px; color: #fff;}
+#visual_sub .textbox strong span {font-size: 120px;}
+#visual_sub .textbox p {font-size: 22px; font-family:'Pretendard-Medium'; color: #fff; line-height: 40px; margin-top: 30px;}
+
+
+#section_sub {padding:90px 0 200px 0}
+#section_sub h2 {height: 55px; margin-bottom: 33px; font-size: 60px; text-align: center; font-weight: lighter;}
+
+#section_sub .snb_box {text-align: center; margin-bottom: 120px;}
+#section_sub .snb {height: 60px; background:#dcdcdc; display: inline-flex; justify-content: center; padding: 0 130px; }
+#section_sub .snb li {font-size: 22px; height: 60px; line-height: 60px; position: relative;}
+#section_sub .snb li:before {content: ""; position: absolute; width: 1px;height: 12px; background: rgba(0, 0, 0, 0.4); right: 0; top: 50%; transform: translateY(-50%);}
+#section_sub .snb li:last-child:before {display: none;}
+
+#section_sub .snb li a {color: #333; padding: 0 30px; display: block;}
+#section_sub .snb li:hover {background: #c6004d; }
+#section_sub .snb li:hover a {color: #fff;}
+#section_sub .snb li.on:hover a {color: #fff; font-weight: 400;}
+#section_sub .snb li.on a {color: #c6004d; font-weight: bold;}
+
+#section_sub h3 {font-size: 40px; text-align: center; margin-bottom: 70px;}
+
+#section_sub article.greeting {display: flex; gap: 70px; justify-content: center; }
+#section_sub article.greeting figure {width: 620px; height: 500px;}
+#section_sub article.greeting .content {width: 670px; }
+                        /* ㄴ 높이를 안주면 안에 들어가는 내용만큼 높이가 주어짐 */
+#section_sub article.greeting .content p {font-size: 20px; line-height: 40px; margin-bottom: 1.5em; word-break: keep-all;}
+
+
+
+/* 서브페이지 sub02_test-내가한거 */
+/* #section_sub2 {padding:90px 0 200px 0}
+#section_sub2 h2 {height: 55px; margin-bottom: 33px; font-size: 60px; text-align: center; font-weight: lighter;}
+
+#section_sub2 .snb_box {text-align: center; margin-bottom: 120px;}
+#section_sub2 .snb {height: 60px; background:#dcdcdc; display: inline-flex; justify-content: center; padding: 0 130px; }
+#section_sub2 .snb li {font-size: 22px; height: 60px; line-height: 60px; position: relative;}
+#section_sub2 .snb li:before {content: ""; position: absolute; width: 1px;height: 12px; background: rgba(0, 0, 0, 0.4); right: 0; top: 50%; transform: translateY(-50%);}
+#section_sub2 .snb li:last-child:before {display: none;}
+
+#section_sub2 .snb li a {color: #333; padding: 0 30px; display: block;}
+#section_sub2 .snb li:hover {background: #c6004d; }
+#section_sub2 .snb li:hover a {color: #fff;}
+#section_sub2 .snb li.on:hover a {color: #fff; font-weight: 400;}
+#section_sub2 .snb li.on a {color: #c6004d; font-weight: bold;}
+
+#section_sub2 h3 {font-size: 40px; text-align: center; margin-bottom: 70px;}
+
+#section_sub2 article p {display: block; margin-bottom: 20px; font-size: 20px;}
+#section_sub2 article p span {font-size: 30px; font-weight: bold; color: #c6004d;}
+
+
+#section_sub2 article { gap: 50px; justify-content: center; position: relative;}
+#section_sub2 article figure {width: 900px; height: 800px; display: flex}
+#section_sub2 article figure img {margin-top: 100px;}
+#section_sub2 article .content {width: 500px; height: 800px; right: 0;position: absolute; right: 0 ; top: 22%; border: 1px solid #000; background: red;}
+
+#section_sub2 article .content .circle li { width: 100px; height: 100px;border-radius: 50%; background: #c3c3c3; text-align: center; line-height: 100px; color: #ffffff; margin-top: 130px; font-size: 20px;}
+#section_sub2 article .content .circle_text li {width: 200px; height: 100px;}
+ */
+
+
+#section_sub article.history {display: flex; gap: 70px; justify-content: center; }
+#section_sub article.history figure {width: 620px; height: 500px;}
+#section_sub article.history .content {width: 670px; }
+                        /* ㄴ 높이를 안주면 안에 들어가는 내용만큼 높이가 주어짐 */
+#section_sub article.history .content p {font-size: 20px; line-height: 40px; margin-bottom: 1.5em; word-break: keep-all;}
+
+}
+
+
+
+
+
+/* 모바일거 가져온거  */
+
+
+@media screen and (max-width:1279px) {
+                        /* ㄴ핸드폰 사이즈로 바뀌는 사이즈 */
+body {font-family: 'Pretendard-Regular';}
+.pc {display: none;}
+        /* ㄴpc에서 모바일로 바뀔때 필요 - index.html 파일에 맨위 a태그가 모바일에는 없어서 a태그 클래스에 pc를 줌*/
+
+header {width: 100%; height: 70px; position: absolute; top: 0; left: 0;z-index: 2;}
+header h1 {width: 100px; height: 30px; float: left; margin: 15px;}
+header h1 img {width: 100%;}
+header .hambuger {float: right;width: 40px; height: 40px; margin: 15px; position: relative; z-index: 7;}
+header .hambuger:before,
+header .hambuger:after {content: "";position: absolute; width: 24px; height: 2px; background: #fff; left: 8px; top: 50%; transition: 0.5s;}
+header .hambuger:before {margin-top: -5px;}
+header .hambuger:after {margin-top: 5px;}
+header .hambuger.on:before {margin-top: 0; transform: rotate(45deg);}
+header .hambuger.on:after {margin-top: 0; transform: rotate(135deg);}
+
+
+/* menu */
+.modal {width: 100%; height: 100vh; position: fixed; background: rgba(0, 13, 39, 0.9); top: 0; left: 0; display: none;}
+
+nav {width: 250px; height: 100vh; background: #c6004d; position: absolute; right: -290px; padding: 0 20px; transition: 0.5s;}
+nav.on {right: 0;}
+nav .gnb {margin-top: 100px; overflow: auto; height: calc(100% - 100px);}
+nav .gnb li {line-height: 60px; text-align: center; font-size: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
+nav .gnb li a {color: #fff; display: block;}
+/* 시험용도 */
+/* nav .gnb li .lnb {background: #000; max-height: 0; overflow: hidden; transition: 0.3s;}
+nav .gnb li:hover .lnb {max-height: 360px;}  */
+nav .gnb li .lnb {background: #021a49; display: none;}
+nav .gnb li .lnb li {border-bottom:0; font-size: 18px;}
+
+
+#visual {width: 100%;height: 100vh; overflow: hidden; position: relative;}
+#visual video {position: absolute; left: 50%; transform: translate(-50%); height: 100%; min-height: 100vw;}
+        /* ㄴmin-height: 100vw; 보여지는 최소의 너비가 100vw 빈 부분없이 나오게끔하기 안주면 가로로 돌려서 봤을 때 빈부분이 생김 / vw-화면의너비/vh-화면의높이 */
+
+#visual:before {content: ""; position: absolute; width: 100%; height: 100%; background: linear-gradient(-45deg, #610000, #002262); z-index: 1; opacity: 0.3;}
+
+#visual .textbox {position: absolute; color: #fff; z-index: 1; padding: 30px; top: 50%; transform: translateY(-50%); word-break: keep-all; }
+#visual .textbox strong {font-size: 26px; line-height: 1.2;}
+#visual .textbox strong span {font-size: 55px;}
+#visual .textbox p {font-size: 16px; line-height: 1.4; margin-top: 20px; font-family: 'Pretendard-Regular';}
+        /* margin은 block태그만 적용됨 - p태그는 block태그임 / padding은 다 적용 가능  */
+
+
+/* section1 */
+#section1 .centerbox {padding: 60px 20px;}
+#section1 h2 {text-align: center; font-size: 34px; font-weight: 300; word-break: keep-all;}
+#section1 h2 span {display: block; font-size: 20px; color: #555; margin-top: 25px;}
+
+#section1 .cont {margin-top: 20px;}
+#section1 .cont:after {content: ""; display: block; clear: both;}
+/*  밑에 주석처리: %로 할경우 -가로로 보았을 때 너비가 늘어나지 않게 하려고 %로 너비를 적음  */
+/* #section1 .cont li {width: 32%; margin-right: 2%; height: 100px; background: #000; float: left;} */
+        /* 공식: 알고싶은 크기 / 부모크기 *100 */
+        /* 비례식: 280 : 100% = 90:X 
+            900 = 280x (쌤이 알려주신 공식,,,,인데 9000 = 280x 이고 x는 32.14인듯
+            900/280 = x 
+            3.214 -> 32% */
+/* #section1 .cont li:last-child {margin-right: 0;} */
+
+#section1 .cont li {Width: calc((100% - 10px) / 3); margin-right: 5px; padding-bottom: 35.714% ; background: #ffe2e2; float: left; position: relative; }
+#section1 .cont li:last-child {margin-right: 0;}
+#section1 .cont li .content {position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
+#section1 .cont li:nth-child(1) {background: url(../images/news1.png); background-size: cover;}
+#section1 .cont li:nth-child(2) {background: url(../images/news2.png);background-size: cover}
+#section1 .cont li:nth-child(3) {background: url(../images/news3.png);background-size: cover}
+#section1 .cont li:before {content:""; position: absolute; width: 100%;height: 100%; background: #000; opacity: 0.4; left: 0; top: 0;}
+
+#section1 .cont .content em {font-style: normal; font-size: 20px; font-weight: bold; color: #fff;}
+#section1 .cont .content p {display: none;}
+#section1 .cont .content a {position: absolute; width: 50px; height: 50px; background: #fff; bottom: -25px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); font-size: 0;color: transparent; text-indent: -9999px; border-radius: 50px;}
+        /* '바로가기' 글자 안보이게끔 하려고 font-size: 0;color: transparent; text-indent: -9999px; 사용 -> 폰트 크기를 0만 주게 되면 지원하지 않는 컴퓨터도 있어서 */
+#section1 .cont .content a:before,
+#section1 .cont .content a:after {content: ""; position: absolute; width: 20px; height: 2px;background: #000; top: 49%; left: 15px; transform-origin: right; }
+#section1 .cont .content a:before {transform: rotate(35deg);}
+#section1 .cont .content a:after {transform: rotate(-35deg);}
+
+
+/* section2 */
+#section2 {background: url(../images/logo_main.png); background-size: cover; position: relative;}
+#section2:before {content: ""; position: absolute; width: 100%; height: 100%;  background: #000000; opacity: 0.4; top: 0; left: 0; z-index:1;}
+#section2 .centerbox {padding: 70px 20px; z-index: 3; position: relative;}
+                                        /* ㄴ섹션에도 position: relative를 주고 여기서도 position: relative를 줘야 z-index의 #section2:before에 준 투명한 배경이 먹음 */
+#section2 figure {width: 120px; margin: 0 auto 50px auto;}
+#section2 figure img {width: 100%;}
+#section2 .text p {color: #fff; margin-bottom: 20px; word-break: keep-all; text-align: justify;}
+        /* ㄴtext-align: justify -> 문장이 많고 길어서 양쪽 끝에 여백을 남기지않고 꽉 채우면서 붙이기 */
+#section2 .text p span {color: #c6004d;}
+
+
+
+/* section3 */
+#section3 .centerbox {padding: 60px 20px;}
+#section3 h2 {text-align: center; font-size: 34px; font-weight: 300; word-break: keep-all;margin-bottom: 20px;}
+#section3 h2 span {display: block; font-size: 20px; color: #555; margin-top: 25px;}
+#section3 .cont li {width: calc((100% - 5px) / 2) ; margin-right: 5px;margin-top: 45px; float: left; position: relative;}
+#section3 .cont:after {content: ""; display: block; clear: both;}
+                /* ㄴ자식한테 float을 주게되면 부모의 높이가 사라져서 다른 섹션들이 겹쳐질 수 있음 (ex.footer가 겹쳐짐 그래서 저거는 공식처럼 외우고 부모한테 사용해주면 높이를 유지해주는 것처럼 만들 수 있음 */
+#section3 .cont li:nth-child(1),
+#section3 .cont li:nth-child(2) {margin-top: 0;}
+#section3 .cont li:nth-child(2n) {margin-right: 0;}
+#section3 .cont li:last-child {margin-right: 0;}
+#section3 .cont li img {width: 100%; height: 100%;}
+#section3 .cont li:before {content:""; position: absolute; width: 100%;height: 100%; background: #000; opacity: 0.4; left: 0; top: 0;}
+#section3 .cont li .content {position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 100% ; top: 5%;}
+#section3 .cont .content em {font-style: normal; font-size: 20px; font-weight: bold; color: #fff; z-index: 4;}
+#section3 .cont .content a {font-size: 0; color: transparent; text-indent: -9999px; height: 50px; width: 50px; background: #ffffff; position: absolute; border-radius: 50px;bottom: -20px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+#section3 .cont .content a:before,
+#section3 .cont .content a:after {content: ""; position: absolute; width: 20px; height: 2px; background: #000; top: 50%; left: 15px; transform-origin: right;  }
+#section3 .cont .content a:before {transform: rotate(35deg);}
+#section3 .cont .content a:after {transform: rotate(-35deg);}
+
+
+/* footer */
+footer .footer_menu {background: #000; padding: 80px 0; box-sizing: border-box; display: none;}
+footer .footer_menu .centerbox {display: flex;gap: 25px;}
+footer .footer_menu .centerbox > div { width: 300px; height: 200px; flex-grow: 1;}
+.footer_menu h2 {height: 55px; border-bottom:  2px solid #fff; font-size: 30px; color: #fff; margin-bottom: 38px;}
+.footer_menu h2 em {color:  #c6004d; font-style: normal;}
+.footer_menu h2 span {border: 1px solid #000; position: relative;}
+
+/* footer안에있는 점만들기 */
+.footer_menu h2 span:before {content: ""; position: absolute; width: 7px; height: 7px; border-radius: 50%; background:#c6004d; right: -10px; top: 4px;}
+
+.footer_menu .info {line-height: 38px; font-size: 20px; color: #fff; font-size: 18px;}
+.footer_menu .info p span {color: #c6004d;}
+.footer_menu .info a {color: #fff; }
+
+
+
+/* footer */
+footer {width: 100%;display: flex; justify-content: center; align-items: center; flex-direction: column; }
+                /* ㄴ display: flex (가로정렬,,?) 를 써야지 -> justify-content: center 가로에서의 가운데 / align-items: center 세로에서의 가운데 의 효과가 먹음 */
+footer p {text-align: center; color: #fff; font-size: 14px;}
+footer .copyright {height: 220px; background:  #c6004d; display: flex; justify-content: center; align-items: center; width: 100%; }
+
+}

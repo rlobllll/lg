@@ -1,0 +1,9 @@
+@charset "UTF-8" ;
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #222;}
+img {vertical-align: top;}
+
+.autoH::after {content: ""; display: block; clear: both;}
+        /* ㄴ ::점 두개나 :점 한개나 (콜론) 상관없음 최신 브라우저에만 적용하겠단 뜻 */
