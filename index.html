@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGGL</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/font.css">
+
+    <style>
+        .modal {position: absolute; width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.7); display: none;}
+        .popup {position: absolute; width: 300px; height: 400px; background: #fff; padding: 20px; font-size: 20px; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+        .popup a {background: #ff0000; color: #fff; position: absolute; right: 20px; bottom: 20px; padding: 20px 50px;}
+    </style>
+</head>
+
+<body>
+    <!-- <div class="modal">
+                id로 이름을 지을 경우 <div id="modal"> css에선 .modal이아닌 #modal로 적어야함 -->
+                <!-- <div id="modal" class="modal"> 이렇게 class랑 id를 같이 쓸 수도 있음 다른 이름으로도 가능 -->
+        <!-- <div class="popup">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis veniam incidunt temporibus quasi odio voluptatem nam error ipsum, laboriosam mollitia consequatur, repellat corporis distinctio cumque exercitationem labore doloremque deleniti! Ea.
+            <a href="#">닫기</a>
+        </div>
+    </div> --> 
+
+
+    <header>
+        <h1><a href="/index.html"><img src="images/logo.png" alt=""></a></h1>
+
+        <nav>
+            <ul class="gnb">
+                <li><a href="/sub01_01.html">Company</a>
+                    <ul class="lnb">
+                        <li><a href="/sub01_01.html">CI</a></li>
+                        <li><a href="/sub01_02.html">개요</a></li>
+                        <li><a href="#">비전</a></li>
+                        <li><a href="#">경영이념</a></li>
+                        <li><a href="#">행동방식</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Products</a>
+                    <ul class="lnb">
+                        <li><a href="#">제품 소개</a></li>
+                        <li><a href="#">기술 개발</a></li>
+                        <li><a href="#">기술과 서비스</a></li>
+                        <li><a href="#">솔루션</a></li>
+                        <li><a href="#">매거진</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Notice</a>
+                    <ul class="lnb">
+                        <li><a href="#">공지사항</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Board</a>
+                    <ul class="lnb">
+                        <li><a href="#">묻고 답하기</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="hambuger"></div>
+        
+    </header>
+
+
+    <a href="#" class="prod_intro pc">
+        <img src="images/right_logo.png" alt="">
+        <p>Product introduction</p>
+    </a>
+
+    <div id="visual">
+        <!-- <video src="video/main.mp4"></video> 이렇게도 쓸 수 있음-->
+
+        <video controls autoplay muted loop>
+            <source src="video/main.mp4" type="video/mp4">
+            <!-- ㄴ mp4 파일을 파이어폭스랑 오페라는 지원 불가 -->
+
+            <source src="video/main.ogg" type="video/ogg">
+            <!-- ㄴ 모든 브라우저에서 나오게하려면 ogg 영상으로 올려야함 다른 사이트에서 변환 가능 -->
+        </video>
+
+        <!-- 유튜브영상으로 넣기 iframe=다른 사이트를 가져오기-->
+        
+        <div class="textbox">
+            <strong>
+                <span>Ledear in</span> <br>Global Technology Innovation
+            </strong>
+                
+            <p>
+                대한민국을 대표하는 다국적 전자기업으로, 가전제품부터 모바일, 홈 엔터테인먼트까지 <br> 다양한 분야에서 혁신적인 기술과 높은 품질의 제품을 선보이며 글로벌 시장에서 강력한 입지를 확립하였습니다.
+            </p>
+        </div>
+        
+    </div>
+    <div id="section_box">
+        <section id="section1">
+            <div class="centerbox">
+                <h2> <b>NEWS</b> ROOM
+                    <span>"지속 가능한 발전을 위한 LG의 경영 소식을 만나보세요."</span>
+                </h2>
+
+                <ul class="cont">
+                    <li>
+                        <div class="content">
+                            <em>LG 전자</em>
+                            <p>“무선 투명 올레드 TV는 오직 <br>
+                                LG전자만이 해낼 수 있는 기술”</p>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <em>LG 생활건강</em>
+                            <p> “4년 9개월 만에 쿠팡 <br>
+                                ‘로켓배송’ 직거래 재개”</p>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <em>LG 유플러스</em>
+                            <p>셀로, “추운 겨울 따뜻한 마음을 <br>
+                                모아, 연탄 2024장 기부”</p>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="section2">
+            <div class="centerbox">
+                <figure>
+                    <img src="images/LGlogo.png" alt="">
+                </figure>
+                <div class="text">
+                    <p>
+                        <span>‘Life's Good’</span> 브랜드 철학을 바탕으로 고객에게 더 나은 삶을 제공하기 위해
+                        ▲최고의(First) ▲차별화된(Unique) ▲세상에 없던(New) F·U·N 경험을 선사하고자 항상 노력합니다.
+                    </p>
+                    <p>
+                        H&A(Home Appliance & Air Solution), HE(Home Entertainment), VS(Vehicle component Solutions), BS(Business Solutions)의 사업본부로 구성되어
+                        있으며, <span>전 세계 130여 개 사업장에서 사업을 전개하며 가전, IT, 자동차부품, 사이니지 등 다양한 분야에서 기술혁신을 선도하는 글로벌 리더</span>입니다.
+                    </p>
+    
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section3">
+            <div class="centerbox">
+                <h2> OUR <b>COMPANY</b>
+                    <span>"혁신적인 기술로 고객을 위한 가치를 만들어갑니다."</span>
+                </h2>
+
+                <ul class="cont">
+                    <li>
+                        <img src="images/company1.png" alt="">
+                        <div class="content">
+                            <em>LG 전자</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="images/company2.png" alt="">
+                        <div class="content">
+                            <em>LG 디스플레이</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company3.png" alt="">
+                        <div class="content">
+                            <em>LG 이노텍</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company4.png" alt="">
+                        <div class="content">
+                            <em>LG 화학</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company5.png" alt="">
+                        <div class="content">
+                            <em>LG 에너지솔루션</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company6.png" alt="">
+                        <div class="content">
+                            <em>LG 생활건강</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company7.png" alt="">
+                        <div class="content">
+                            <em>LG 유플러스</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company8.png" alt="">
+                        <div class="content">
+                            <em>LG 헬로비전</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>                    
+                    <li>
+                        <img src="images/company9.png" alt="">
+                        <div class="content">
+                            <em>HS 애드</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/company10.png" alt="">
+                        <div class="content">
+                            <em>LG CNS</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/company11.png" alt="">
+                        <div class="content">
+                            <em>LG 경영개발원</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/company12.png" alt="">
+                        <div class="content">
+                            <em>LG 스포츠</em>
+                            <a href="#">바로가기</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+
+    <footer>
+        <div class="footer_menu">
+            <div class="centerbox">
+                <div>
+                    <h2><span>ABOUT <em>LG</em> </span></h2>
+                    <div class="info">
+                        세계 최고를 지향하여 힘이 넘치는 젊음과 새로운 기술에 <br>
+                        끊임없이 도전하는 노력으로 세계 어디에서나 고객과 <br>
+                        친밀하게 대하며 고객만족을 위해 최선을 다하겠습니다.
+                    </div>
+                </div>
+                <div class="quicklink">
+                    <h2><span>QUICK LINES</span></h2>
+                    <div class="info">
+                        <a href="#">-사이트맵</a>
+                        <a href="#">-개인정보 처리방침</a>
+                        <a href="#">-이벤트 개인정보 처리방침</a>
+                        <a href="#">-운영관리 방침</a>
+                        <a href="#">-유튜브</a>
+                        <a href="#">-인스타그램</a>
+                        <a href="#">-페이스북</a>
+                        <a href="#">-블로그</a>
+                    </div>
+                </div>
+                <div>
+                    <h2><span>CONTACK US</span></h2>
+                    <div class="info">
+                        <p>회사명 엘지(주)</p>
+                        <p>대표자 구광모, 권봉석</p>
+                        <p>주소 서울특별시 영등포구 여의대로 128 (우) 07336</p>
+                        <p>메일 <span>LGkorea@gmail.com</span></p>
+                        <p>전화 <span>02-1234-1234</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright 2022 LG Communication Center, D&O. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- <script>
+        alert("바부바부")         ->경고창 띄우는거 괄호 안에 적을 땐 "" 나 '' 필수로 적기
+        prompt ()                ->띄운 창에 뭔가 입력할 수 있는거
+    </script> -->
+    <script src="script/jquery-3.7.1.min.js"></script>
+    <script src="script/action.js"></script>
+
+
+    <!-- 밑에 모바일로 접속했을 때 페이지 넘기는 소스 (pc에 넣어야함) -->
+    <script type="text/javascript">
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = "index_m.html";
+        }
+    </script> 
+</body>
+</html>
