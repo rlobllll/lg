@@ -380,5 +380,5 @@ footer p {text-align: center; color: #fff; font-size: 14px;}
 /* 반응형 */ 
 @media screen and (max-width:1280px){
         .footer_menu .centerbox {display: none;}
-    }
+}
     
