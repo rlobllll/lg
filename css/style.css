@@ -258,6 +258,7 @@ footer .copyright {height: 220px; background:  #c6004d; display: flex; justify-c
 body {font-family: 'Pretendard-Regular';}
 .pc {display: none;}
         /* ㄴpc에서 모바일로 바뀔때 필요 - index.html 파일에 맨위 a태그가 모바일에는 없어서 a태그 클래스에 pc를 줌*/
+.footer_menu .centerbox {display: none;}
 
 header {width: 100%; height: 70px; position: absolute; top: 0; left: 0;z-index: 2;}
 header h1 {width: 100px; height: 30px; float: left; margin: 15px;}
@@ -377,8 +378,3 @@ footer p {text-align: center; color: #fff; font-size: 14px;}
 
 }
 
-/* 반응형 */ 
-@media screen and (max-width:1280px){
-        .footer_menu .centerbox {display: none;}
-}
-    
